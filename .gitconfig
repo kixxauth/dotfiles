@@ -1,0 +1,8 @@
+[user]
+	email = kixxauth@gmail.com
+	name = Kristoffer Walker
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
+	excludesfile = /home/kixx/.gitignore

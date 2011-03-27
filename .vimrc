@@ -9,6 +9,10 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+" 2011-03-27 added: (Pathogen for CoffeeScript)
+filetype off
+call pathogen#runtime_append_all_bundles()
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish

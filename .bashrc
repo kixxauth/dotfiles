@@ -65,6 +65,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+if [ $(uname) = Darwin ]; then
+    PS1='\u:\w\$ '
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

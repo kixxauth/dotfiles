@@ -81,6 +81,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+export CLICOLOR=1
+
+# better color support
+alias ls='ls -Gp'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'

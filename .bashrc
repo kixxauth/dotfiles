@@ -65,6 +65,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+if [ $(uname) = Darwin ]; then
+    PS1='\u:\w\$ '
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -76,6 +80,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+export CLICOLOR=1
+
+# better color support
+alias ls='ls -Gp'
 
 # some more ls aliases
 alias ll='ls -alF'

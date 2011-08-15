@@ -84,7 +84,7 @@ fi
 export CLICOLOR=1
 
 # better color support
-alias ls='ls -Gp'
+alias ls='ls -h --color=auto'
 
 # some more ls aliases
 alias ll='ls -alF'

@@ -33,46 +33,31 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+# colored prompt from http://www.ccs.neu.edu/home/katz/unix-colors.html
+PSC() { echo -ne "\[\033[${1:-0;38}m\]"; }
+[ -n "$CYGWIN" ] && cygpwd="s:^/cygdrive/([a-z])(/|$):\1\:/:;"
+function PWD() { echo "$*" |perl -pne \
+  's:^'"$HOME"':~:;'"$cygpwd"'s:^(.{10}).{4}.*(.{20})$:$1...$2:;'
+}
+PR="0;32"		# default color used in prompt is green
+if [ "$(id -u)" = 0 ]
+  then sudo=41		# root is red background
+  elif [ "$(id -un)" != "$(basename $HOME)" ]
+    then sudo=31	# not root, not self: red text
+  else sudo="$PR"	# standard user color
 fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-if [ $(uname) = Darwin ]; then
-    PS1='\u:\w\$ '
-fi
+alias PS1='export PS1="\u@\h \w\$ "'	# if in trouble, run the command 'PS1'
+PROMPT_COMMAND='[ $? = 0 ] && PS1=${PS1[1]} || PS1=${PS1[2]}'
+PSbase="$(PSC $sudo)\u$(PSC $PR)@\h $(PSC 33)\$(PWD \w)"
+PS1[1]="$PSbase$(PSC $PR)\$ $(PSC)"
+PS1[2]="$PSbase$(PSC  31)\$ $(PSC)"
+PS1="${PS1[1]}"
+unset sudo PR PSbase
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -h --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -83,16 +68,10 @@ fi
 
 export CLICOLOR=1
 
-# better color support
-alias ls='ls -h --color=auto'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# goto home dir
-alias h='cd ~'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

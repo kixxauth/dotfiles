@@ -91,8 +91,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# goto home dir
-alias h='cd ~'
+# my server
+alias kristo='ssh -p 2575 kris@kristo.us'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

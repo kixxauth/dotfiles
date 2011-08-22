@@ -40,7 +40,7 @@ hi WarningMsg ctermfg=DarkRed	   guifg=Red
 hi WildMenu   ctermfg=Black	   ctermbg=Yellow    guibg=Yellow guifg=Black
 
 " syntax highlighting
-hi Comment    cterm=NONE ctermfg=DarkBlue    gui=NONE guifg=red2
+hi Comment    cterm=NONE ctermfg=DarkGray    gui=NONE guifg=red2
 hi Constant   cterm=NONE ctermfg=DarkRed     gui=NONE guifg=green3
 hi Identifier cterm=NONE ctermfg=DarkMagenta gui=NONE guifg=cyan4
 hi PreProc    cterm=NONE ctermfg=DarkMagenta gui=NONE guifg=magenta3

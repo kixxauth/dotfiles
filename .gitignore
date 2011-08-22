@@ -1,5 +1,3 @@
 *.swp
 *.swo
 *.pyc
-upload.sh
-deploy.sh

@@ -8,6 +8,14 @@ Feel free to poke around, and if you have any tips... share the love.
 
 ### To Update the Vim Scripts
 
+    cd vim/third_party/vim-pathogen
+    git pull origin master
+    cd ../../../
+    git commit -a
+    cd vim/.vim/bundle/vim-coffee-script
+    git pull origin master
+    cd ../../../../
+    git commit -a
     bin/update-vim
 
 ### To Deploy the . Files

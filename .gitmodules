@@ -1,6 +1,0 @@
-[submodule "third_party/vim-pathogen"]
-	path = third_party/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
-[submodule "third_party/vim-coffee-script"]
-	path = third_party/vim-coffee-script
-	url = git://github.com/kchmck/vim-coffee-script.git

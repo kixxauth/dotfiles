@@ -95,7 +95,7 @@ export CLICOLOR=1
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -ClF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

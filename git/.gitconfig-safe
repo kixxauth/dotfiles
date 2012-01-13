@@ -6,6 +6,3 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-[github]
-	user = kixxauth
-	token = 1d2a288b99371567038a9f0d4484c7fb

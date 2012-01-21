@@ -68,6 +68,8 @@ if &t_Co > 2 || has("gui_running")
   colorscheme kixx
 endif
 
+set guifont=Monaco:h13
+
 set scrolloff=12
 
 " Only do this part when compiled with support for autocommands.

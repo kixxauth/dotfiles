@@ -28,7 +28,7 @@ hi IncSearch  cterm=reverse	   gui=reverse
 hi LineNr     ctermfg=Brown	   guifg=#444444
 hi ModeMsg    cterm=bold	   gui=bold
 hi MoreMsg    ctermfg=DarkGreen    gui=bold guifg=SeaGreen
-hi NonText    ctermfg=Blue	   gui=bold guifg=gray guibg=white
+hi NonText    ctermfg=Blue	   gui=bold guifg=#444444
 hi Pmenu      guibg=LightBlue
 hi PmenuSel   ctermfg=White	   ctermbg=DarkBlue  guifg=White  guibg=DarkBlue
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen

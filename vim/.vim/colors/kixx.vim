@@ -53,6 +53,6 @@ hi Statement  cterm=bold ctermfg=DarkYellow  gui=NONE guifg=#e4b92b
 hi Conditional  cterm=bold ctermfg=DarkYellow  gui=NONE guifg=#e4b92b
 hi Label  cterm=bold ctermfg=DarkYellow  gui=NONE guifg=#e4b92b
 hi Repeat  cterm=bold ctermfg=DarkYellow  gui=NONE guifg=#e4b92b
-hi Type	      cterm=NONE ctermfg=DarkGreen    gui=NONE guifg=DarkGreen
+hi Type	      cterm=NONE ctermfg=DarkGreen    gui=NONE guifg=#30be35
 
 " vim: sw=2

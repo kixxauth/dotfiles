@@ -19,6 +19,10 @@ So, before you can use this repository, you need to initialize and update the su
     git pull origin master
     cd ../../../
     git commit -a
+    cd vim/third_party/vim-javascript
+    git pull origin master
+    cd ../../../
+    git commit -a
     cd vim/.vim/bundle/vim-coffee-script
     git pull origin master
     cd ../../../../

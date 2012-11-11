@@ -27,6 +27,9 @@ So, before you can use this repository, you need to initialize and update the su
     git pull origin master
     cd ../../../../
     git commit -a
+    cd vim/.vim/bundle/vim-less
+    git pull origin master
+    cd ../../../../
     bin/update-vim
 
 ### To Deploy the . Files

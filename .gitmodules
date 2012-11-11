@@ -7,3 +7,6 @@
 [submodule "vim/third_party/vim-javascript"]
 	path = vim/third_party/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
+[submodule "vim/.vim/bundle/vim-less"]
+	path = vim/.vim/bundle/vim-less
+	url = git://github.com/groenewege/vim-less.git

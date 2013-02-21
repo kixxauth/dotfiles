@@ -118,3 +118,5 @@ if [ -d $HOME/local/bin ]; then
     PATH=$HOME/local/bin:$PATH
 fi
 
+# The git path needs to be set for OSX
+PATH=$PATH:/usr/local/git/bin

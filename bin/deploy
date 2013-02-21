@@ -4,10 +4,12 @@ ROOTDIR="$( dirname "$THISDIR" )"
 
 if [ "$( uname )" == "Darwin" ]; then
     echo 'updating ~/.profile'
-    cp $ROOTDIR/.bashrc $HOME/.profile
+    cp "$ROOTDIR/.bashrc" "$HOME/.profile"
+    source "$HOME/.profile"
 else
     echo 'updating ~/.bashrc'
-    cp $ROOTDIR/.bashrc $HOME/.bashrc
+    cp "$ROOTDIR/.bashrc" "$HOME/.bashrc"
+    source "$HOME/.bashrc"
 fi
 
 echo 'updating ~/.gitignore_master'

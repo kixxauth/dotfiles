@@ -113,10 +113,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# set PATH so it includes private bin in $HOME if it exists
-if [ -d $HOME/local/bin ]; then
-    PATH=$HOME/local/bin:$PATH
+# Customize the PATH (especially for Homebrew)
+if [ -d /usr/local/bin ]; then
+    PATH=/usr/local/bin:$PATH
 fi
-
-# The git path needs to be set for OSX
-PATH=$PATH:/usr/local/git/bin

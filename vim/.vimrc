@@ -51,6 +51,9 @@ autocmd Filetype html setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype xhtml setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype css setlocal noexpandtab tabstop=2 shiftwidth=2
 
+autocmd Filetype less setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype scss setlocal expandtab tabstop=2 shiftwidth=2
+
 " expandtab for Rails
 autocmd Filetype erb setlocal expandtab tabstop=2 shiftwidth=2
 

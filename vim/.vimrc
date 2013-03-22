@@ -51,6 +51,9 @@ autocmd Filetype html setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype xhtml setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype css setlocal noexpandtab tabstop=2 shiftwidth=2
 
+" expandtab for Rails
+autocmd Filetype erb setlocal expandtab tabstop=2 shiftwidth=2
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 

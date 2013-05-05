@@ -11,7 +11,7 @@
 
 " 2011-03-27 added: (Pathogen for CoffeeScript)
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -46,11 +46,11 @@ set foldmethod=indent
 " python), but for HTML I actually want to do something
 " different.
 "
-autocmd Filetype javascript setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype html setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype xhtml setlocal noexpandtab tabstop=2 shiftwidth=2
 autocmd Filetype css setlocal noexpandtab tabstop=2 shiftwidth=2
 
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd Filetype less setlocal expandtab tabstop=2 shiftwidth=2
 autocmd Filetype scss setlocal expandtab tabstop=2 shiftwidth=2
 

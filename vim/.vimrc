@@ -11,7 +11,7 @@
 
 " 2011-03-27 added: (Pathogen for CoffeeScript)
 filetype off
-call pathogen#incubate()
+call pathogen#infect()
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"

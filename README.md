@@ -1,17 +1,17 @@
-Dotfiles
+Dotfile
 ========
 
 Some of my . files I have lying around on my machines.
 ------------------------------------------------------
 
-Feel free to poke around, and if you have any tips... share the love.
+Feel fee to poke around, and if you have any tips... share the love.
 
 ### Some of the Vim stuff is managed with git submodules
 
 So, before you can use this repository, you need to initialize and update the submodules:
 
-    git submodule init
-    git submodule update
+	git submodule init
+	git submodule update
 
 ### To Update the Vim Scripts
 

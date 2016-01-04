@@ -3,11 +3,11 @@ THISDIR="$(cd `dirname "$0"` && pwd)"
 ROOTDIR="$( dirname "$THISDIR" )"
 
 if [ "$( uname )" == "Darwin" ]; then
-    echo 'updating ~/.profile'
-    cp "$ROOTDIR/.bashrc" "$HOME/.profile"
+  echo 'updating ~/.profile'
+  cp "$ROOTDIR/.bashrc" "$HOME/.profile"
 else
-    echo 'updating ~/.bashrc'
-    cp "$ROOTDIR/.bashrc" "$HOME/.bashrc"
+  echo 'updating ~/.bashrc'
+  cp "$ROOTDIR/.bashrc" "$HOME/.bashrc"
 fi
 
 echo 'updating ~/.gitignore_master'
@@ -18,10 +18,10 @@ cp $ROOTDIR/vim/.vimrc $HOME/.vimrc
 
 echo 'updating ~/.vim/'
 rsync \
-    --recursive \
-    --links \
-    --perms \
-    --times \
-    --owner \
-    --exclude="/.git***" \
-    $ROOTDIR/vim/.vim $HOME/
+  --recursive \
+  --links \
+  --perms \
+  --times \
+  --owner \
+  --exclude="/.git***" \
+  $ROOTDIR/vim/.vim $HOME/

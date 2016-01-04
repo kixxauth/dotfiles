@@ -113,11 +113,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ $(uname) = Darwin ] && [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-
 # Customize the PATH (especially for Homebrew)
 if [ -d /usr/local/bin ]; then
     PATH=/usr/local/bin:$PATH
+fi
+
+# Autocomplete for git
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
 fi

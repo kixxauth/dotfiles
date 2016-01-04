@@ -5,6 +5,7 @@ ROOTDIR="$( dirname "$THISDIR" )"
 if [ "$( uname )" == "Darwin" ]; then
   echo 'updating ~/.profile'
   cp "$ROOTDIR/.bashrc" "$HOME/.profile"
+  cp "$ROOTDIR/git/.git-completion.bash" "$HOME/.git-completion.bash"
 else
   echo 'updating ~/.bashrc'
   cp "$ROOTDIR/.bashrc" "$HOME/.bashrc"

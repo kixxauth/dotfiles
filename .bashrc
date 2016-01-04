@@ -48,18 +48,15 @@ if [ -n "$force_color_prompt" ]; then
   color_prompt=
   fi
 
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
-}
-# PS1="\h:\W \u\[\033[0;32m\]\$(parse_git_branch_and_add_brackets) \[\033[0m\]\$ "
-
 fi
 
+. ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1;
 if [ "$color_prompt" = yes ]; then
   if [ $(uname) = Darwin ]; then
-    PS1='\[\033[0;34m\]\w\[\033[0;33m\]$(parse_git_branch)\[\033[00m\]\$ '
+    PS1='\[\033[0;34m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
   else
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;34m\]\w\[\033[0;33m\]$(parse_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;34m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
   fi
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '

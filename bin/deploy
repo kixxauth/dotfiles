@@ -14,6 +14,9 @@ fi
 echo 'updating ~/.gitignore_master'
 cp $ROOTDIR/git/.gitignore_master $HOME/.gitignore_master
 
+echo 'updating ~/.git-prompt.sh'
+cp "$ROOTDIR/git/.git-prompt.sh" "$HOME/.git-prompt.sh"
+
 echo 'updating ~/.vimrc'
 cp $ROOTDIR/vim/.vimrc $HOME/.vimrc
 

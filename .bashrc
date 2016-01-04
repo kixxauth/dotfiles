@@ -25,12 +25,12 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+  xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -39,14 +39,14 @@ esac
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-    else
-    color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
+  else
+  color_prompt=
+  fi
 
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
@@ -56,38 +56,38 @@ function parse_git_branch {
 fi
 
 if [ "$color_prompt" = yes ]; then
-    if [ $(uname) = Darwin ]; then
-        PS1='\[\033[0;34m\]\w\[\033[0;33m\]$(parse_git_branch)\[\033[00m\]\$ '
-    else
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[0;34m\]\w\[\033[0;33m\]$(parse_git_branch)\[\033[00m\]\$ '
-    fi
+  if [ $(uname) = Darwin ]; then
+    PS1='\[\033[0;34m\]\w\[\033[0;33m\]$(parse_git_branch)\[\033[00m\]\$ '
+  else
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;34m\]\w\[\033[0;33m\]$(parse_git_branch)\[\033[00m\]\$ '
+  fi
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
 if [ $(uname) = Darwin ]; then
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # enable color support of ls and also add handy aliases
 # Ubuntu
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-    # human readable file sizes
-    alias ls='ls -h --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+  # human readable file sizes
+  alias ls='ls -h --color=auto'
+  alias dir='dir --color=auto'
+  alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 else
-    # human readable file sizes
-    alias ls='ls -h'
+  # human readable file sizes
+  alias ls='ls -h'
 fi
 
 export CLICOLOR=1
@@ -103,22 +103,22 @@ alias l='ls -ClF'
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+  . /etc/bash_completion
 fi
 
 # Customize the PATH (especially for Homebrew)
 if [ -d /usr/local/bin ]; then
-    PATH=/usr/local/bin:$PATH
+  PATH=/usr/local/bin:$PATH
 fi
 
 # Autocomplete for git
 if [ -f ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
+  . ~/.git-completion.bash
 fi

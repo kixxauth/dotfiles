@@ -54,9 +54,9 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE=1;
 if [ "$color_prompt" = yes ]; then
   if [ $(uname) = Darwin ]; then
-    PS1='\[\033[0;34m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
+    PS1='\[\033[0;90m\]\w\[\033[0;33m\] $(__git_ps1 " (%s)")\[\033[00m\]\$ '
   else
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;34m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;90m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
   fi
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -88,6 +88,7 @@ else
 fi
 
 export CLICOLOR=1
+export LSCOLORS=Axfxcxdxbxegedabagacad
 
 # some more ls aliases
 alias ll='ls -alF'

@@ -25,16 +25,6 @@ So, before you can use this repository, you need to initialize and update the su
 	git pull origin master
 	cd ../../../
 	git commit -a
-	cd vim/.vim/bundle/vim-coffee-script
-	git checkout master
-	git pull origin master
-	cd ../../../../
-	git commit -a
-	cd vim/.vim/bundle/vim-less
-	git checkout master
-	git pull origin master
-	cd ../../../../
-	git commit -a
 
 	bin/update-vim
 
@@ -42,7 +32,7 @@ So, before you can use this repository, you need to initialize and update the su
 
     bin/deploy
 
-The only files deployed will be Vim files, .gitignore, and .bashrc; the rest of the files in this repo are for reference only.
+This will deploy the .bashrc file as ~/.profile on a Mac. The only files deployed will be Vim files, .gitignore, and .profile | .bashrc; the rest of the files in this repo are for reference only.
 
 *Kris*
 

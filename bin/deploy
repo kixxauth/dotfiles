@@ -3,10 +3,12 @@ THISDIR="$(cd `dirname "$0"` && pwd)"
 ROOTDIR="$( dirname "$THISDIR" )"
 
 if [ "$( uname )" == "Darwin" ]; then
-  echo 'updating ~/.profile'
-  cp "$ROOTDIR/.bashrc" "$HOME/.profile"
-  cp "$ROOTDIR/git/.git-completion.bash" "$HOME/.git-completion.bash"
+  ## Mac
+  echo 'updating ~/.bash_profile'
+  cp "$ROOTDIR/.bashrc" "$HOME/.bashrc"
+  cp "$ROOTDIR/.bash_profile" "$HOME/.bash_profile"
 else
+  ## Linux
   echo 'updating ~/.bashrc'
   cp "$ROOTDIR/.bashrc" "$HOME/.bashrc"
 fi

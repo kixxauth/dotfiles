@@ -120,3 +120,6 @@ fi
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+## Put the Sublime Text command line tool on the path
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"

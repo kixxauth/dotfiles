@@ -94,6 +94,8 @@ export LSCOLORS=Axfxcxdxbxegedabagacad
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -ClF'
+alias lt='ls -t'
+alias ltr='ls -tr'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -121,5 +123,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-## Put the Sublime Text command line tool on the path
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+# Setting the PATH for Homebrew, and programs installed by Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+

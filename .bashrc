@@ -94,8 +94,6 @@ export LSCOLORS=Axfxcxdxbxegedabagacad
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -ClF'
-alias lt='ls -t'
-alias ltr='ls -tr'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -118,11 +116,19 @@ if [ -d /usr/local/bin ]; then
   PATH=/usr/local/bin:$PATH
 fi
 
-# Autocomplete for git
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+## Uncomment these if they are installed
 
+# Macs need to have git autocomplete enabled.
+# Autocomplete for git
+# if [ -f ~/.git-completion.bash ]; then
+#   . ~/.git-completion.bash
+# fi
+
+# Homebrew on a Mac
 # Setting the PATH for Homebrew, and programs installed by Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
+
+# My local scripts.
+# Initialize my local ksys library for autocompletions
+# eval "$(/Users/kris/Projects/local/bin/ksys init -)"
 
